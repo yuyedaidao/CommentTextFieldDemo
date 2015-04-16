@@ -14,6 +14,13 @@
 		214255871ADFE4F5008C6164 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214255861ADFE4F5008C6164 /* Images.xcassets */; };
 		2142558A1ADFE4F5008C6164 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214255881ADFE4F5008C6164 /* LaunchScreen.xib */; };
 		214255961ADFE4F5008C6164 /* CommentTextFieldDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 214255951ADFE4F5008C6164 /* CommentTextFieldDemoTests.m */; };
+		214255A31ADFE555008C6164 /* CommentTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 214255A11ADFE555008C6164 /* CommentTextField.m */; };
+		214255A41ADFE555008C6164 /* CommentTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 214255A21ADFE555008C6164 /* CommentTextField.xib */; };
+		214255A71ADFE683008C6164 /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 214255A61ADFE683008C6164 /* UIView+Util.m */; };
+		214255AA1ADFE759008C6164 /* bic_reply_write_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 214255A81ADFE759008C6164 /* bic_reply_write_bg.png */; };
+		214255AB1ADFE759008C6164 /* bic_reply_write_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 214255A91ADFE759008C6164 /* bic_reply_write_bg@2x.png */; };
+		214255AE1ADFE790008C6164 /* bt_reply_write_a.png in Resources */ = {isa = PBXBuildFile; fileRef = 214255AC1ADFE790008C6164 /* bt_reply_write_a.png */; };
+		214255AF1ADFE790008C6164 /* bt_reply_write_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 214255AD1ADFE790008C6164 /* bt_reply_write_a@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,15 @@
 		2142558F1ADFE4F5008C6164 /* CommentTextFieldDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommentTextFieldDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		214255941ADFE4F5008C6164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		214255951ADFE4F5008C6164 /* CommentTextFieldDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTextFieldDemoTests.m; sourceTree = "<group>"; };
+		214255A01ADFE555008C6164 /* CommentTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTextField.h; sourceTree = "<group>"; };
+		214255A11ADFE555008C6164 /* CommentTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTextField.m; sourceTree = "<group>"; };
+		214255A21ADFE555008C6164 /* CommentTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTextField.xib; sourceTree = "<group>"; };
+		214255A51ADFE683008C6164 /* UIView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Util.h"; sourceTree = "<group>"; };
+		214255A61ADFE683008C6164 /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
+		214255A81ADFE759008C6164 /* bic_reply_write_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bic_reply_write_bg.png; sourceTree = "<group>"; };
+		214255A91ADFE759008C6164 /* bic_reply_write_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bic_reply_write_bg@2x.png"; sourceTree = "<group>"; };
+		214255AC1ADFE790008C6164 /* bt_reply_write_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_reply_write_a.png; sourceTree = "<group>"; };
+		214255AD1ADFE790008C6164 /* bt_reply_write_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_reply_write_a@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +79,7 @@
 		2142556D1ADFE4F4008C6164 = {
 			isa = PBXGroup;
 			children = (
+				2142559F1ADFE555008C6164 /* CommentTextField */,
 				214255781ADFE4F5008C6164 /* CommentTextFieldDemo */,
 				214255921ADFE4F5008C6164 /* CommentTextFieldDemoTests */,
 				214255771ADFE4F5008C6164 /* Products */,
@@ -117,6 +134,22 @@
 				214255941ADFE4F5008C6164 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2142559F1ADFE555008C6164 /* CommentTextField */ = {
+			isa = PBXGroup;
+			children = (
+				214255A01ADFE555008C6164 /* CommentTextField.h */,
+				214255A11ADFE555008C6164 /* CommentTextField.m */,
+				214255A21ADFE555008C6164 /* CommentTextField.xib */,
+				214255A51ADFE683008C6164 /* UIView+Util.h */,
+				214255A61ADFE683008C6164 /* UIView+Util.m */,
+				214255A81ADFE759008C6164 /* bic_reply_write_bg.png */,
+				214255A91ADFE759008C6164 /* bic_reply_write_bg@2x.png */,
+				214255AC1ADFE790008C6164 /* bt_reply_write_a.png */,
+				214255AD1ADFE790008C6164 /* bt_reply_write_a@2x.png */,
+			);
+			path = CommentTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +233,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				214255851ADFE4F5008C6164 /* Main.storyboard in Resources */,
+				214255AA1ADFE759008C6164 /* bic_reply_write_bg.png in Resources */,
+				214255AE1ADFE790008C6164 /* bt_reply_write_a.png in Resources */,
+				214255A41ADFE555008C6164 /* CommentTextField.xib in Resources */,
 				2142558A1ADFE4F5008C6164 /* LaunchScreen.xib in Resources */,
 				214255871ADFE4F5008C6164 /* Images.xcassets in Resources */,
+				214255AB1ADFE759008C6164 /* bic_reply_write_bg@2x.png in Resources */,
+				214255AF1ADFE790008C6164 /* bt_reply_write_a@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				214255A71ADFE683008C6164 /* UIView+Util.m in Sources */,
 				214255821ADFE4F5008C6164 /* ViewController.m in Sources */,
+				214255A31ADFE555008C6164 /* CommentTextField.m in Sources */,
 				2142557F1ADFE4F5008C6164 /* AppDelegate.m in Sources */,
 				2142557C1ADFE4F5008C6164 /* main.m in Sources */,
 			);
