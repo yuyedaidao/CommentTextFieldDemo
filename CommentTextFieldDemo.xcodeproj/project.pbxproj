@@ -21,6 +21,8 @@
 		214255AB1ADFE759008C6164 /* bic_reply_write_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 214255A91ADFE759008C6164 /* bic_reply_write_bg@2x.png */; };
 		214255AE1ADFE790008C6164 /* bt_reply_write_a.png in Resources */ = {isa = PBXBuildFile; fileRef = 214255AC1ADFE790008C6164 /* bt_reply_write_a.png */; };
 		214255AF1ADFE790008C6164 /* bt_reply_write_a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 214255AD1ADFE790008C6164 /* bt_reply_write_a@2x.png */; };
+		21C920FC1AE09D4A006A8688 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C920FB1AE09D4A006A8688 /* TableViewController.m */; };
+		21C920FF1AE0A50D006A8688 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C920FE1AE0A50D006A8688 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		214255A91ADFE759008C6164 /* bic_reply_write_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bic_reply_write_bg@2x.png"; sourceTree = "<group>"; };
 		214255AC1ADFE790008C6164 /* bt_reply_write_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_reply_write_a.png; sourceTree = "<group>"; };
 		214255AD1ADFE790008C6164 /* bt_reply_write_a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_reply_write_a@2x.png"; sourceTree = "<group>"; };
+		21C920FA1AE09D4A006A8688 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		21C920FB1AE09D4A006A8688 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		21C920FD1AE0A50D006A8688 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		21C920FE1AE0A50D006A8688 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,10 @@
 				214255861ADFE4F5008C6164 /* Images.xcassets */,
 				214255881ADFE4F5008C6164 /* LaunchScreen.xib */,
 				214255791ADFE4F5008C6164 /* Supporting Files */,
+				21C920FA1AE09D4A006A8688 /* TableViewController.h */,
+				21C920FB1AE09D4A006A8688 /* TableViewController.m */,
+				21C920FD1AE0A50D006A8688 /* TableViewCell.h */,
+				21C920FE1AE0A50D006A8688 /* TableViewCell.m */,
 			);
 			path = CommentTextFieldDemo;
 			sourceTree = "<group>";
@@ -257,7 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C920FF1AE0A50D006A8688 /* TableViewCell.m in Sources */,
 				214255A71ADFE683008C6164 /* UIView+Util.m in Sources */,
+				21C920FC1AE09D4A006A8688 /* TableViewController.m in Sources */,
 				214255821ADFE4F5008C6164 /* ViewController.m in Sources */,
 				214255A31ADFE555008C6164 /* CommentTextField.m in Sources */,
 				2142557F1ADFE4F5008C6164 /* AppDelegate.m in Sources */,
@@ -456,6 +468,7 @@
 				2142559B1ADFE4F5008C6164 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2142559C1ADFE4F5008C6164 /* Build configuration list for PBXNativeTarget "CommentTextFieldDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +477,7 @@
 				2142559E1ADFE4F5008C6164 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
