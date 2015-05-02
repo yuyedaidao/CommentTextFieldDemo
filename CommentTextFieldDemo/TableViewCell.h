@@ -10,5 +10,5 @@
 
 @interface TableViewCell : UITableViewCell
 
-@property (nonatomic,strong) void (^clickBlock)(void);
+@property (nonatomic,strong) void (^clickBlock)(UIView *view);
 @end

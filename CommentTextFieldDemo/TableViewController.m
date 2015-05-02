@@ -50,11 +50,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
     __weak typeof(cell) weakCell = cell;
-    [cell setClickBlock:^{
-        self.commentTF = [CommentTextField showInView:self.view.superview scrollResign:YES alloweMoveInView:tableView flagView:weakCell complelateBlcok:^(CommentTextField *view) {
+    [cell setClickBlock:^(UIView *clicedView){
+        self.commentTF = [CommentTextField showWithScrollResign:YES alloweMoveInView:tableView flagView:clicedView complelateBlcok:^(CommentTextField *view) {
             
         }];
+        NSLog(@"rect = %@",NSStringFromCGRect([tableView rectForRowAtIndexPath:indexPath]));
     }];
+    
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
     

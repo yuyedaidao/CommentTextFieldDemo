@@ -19,7 +19,7 @@
 }
 - (IBAction)click:(id)sender {
     if(self.clickBlock){
-        self.clickBlock();
+        self.clickBlock(sender);
     }
 }
 

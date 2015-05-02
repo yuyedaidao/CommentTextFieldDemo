@@ -20,13 +20,13 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)showCommentTextField:(id)sender {
-    [CommentTextField showInView:self.view complelateBlcok:^(CommentTextField *view) {
+    [CommentTextField showWithComplelateBlcok:^(CommentTextField *view) {
         NSLog(@"str = %@",view.textField.text);
         [view.textField resignFirstResponder];
     }];
 }
 - (IBAction)returnSomeOne:(id)sender {
-    [CommentTextField showInView:self.view username:@"小明" complelateBlcok:^(CommentTextField *view) {
+    [CommentTextField showWithUsername:@"小明" complelateBlcok:^(CommentTextField *view) {
         NSLog(@"str = %@",view.textField.text);
         [view.textField resignFirstResponder];
     }];
