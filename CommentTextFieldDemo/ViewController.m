@@ -22,13 +22,13 @@
 - (IBAction)showCommentTextField:(id)sender {
     [CommentTextField showWithComplelateBlcok:^(CommentTextField *view) {
         NSLog(@"str = %@",view.textField.text);
-        [view.textField resignFirstResponder];
+//        [view.textField resignFirstResponder];
     }];
 }
 - (IBAction)returnSomeOne:(id)sender {
     [CommentTextField showWithUsername:@"小明" complelateBlcok:^(CommentTextField *view) {
         NSLog(@"str = %@",view.textField.text);
-        [view.textField resignFirstResponder];
+//        [view.textField resignFirstResponder];
     }];
 }
 
