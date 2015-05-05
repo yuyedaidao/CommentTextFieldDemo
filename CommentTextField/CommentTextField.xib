@@ -20,7 +20,6 @@
                             <state key="normal" image="bt_reply_write_a">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <state key="highlighted" image="bt_reply_write_b"/>
                             <connections>
                                 <action selector="comment:" destination="dUH-qa-Jje" eventType="touchUpInside" id="7SI-EO-HYC"/>
                             </connections>
@@ -51,7 +50,6 @@
     <resources>
         <image name="bic_reply_write_bg.png" width="246" height="30"/>
         <image name="bt_reply_write_a" width="56" height="30"/>
-        <image name="bt_reply_write_b" width="56" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
