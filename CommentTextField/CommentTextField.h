@@ -16,7 +16,7 @@
 //@end
 
 
-typedef void (^CompelateBlcok)(CommentTextField *view);
+typedef void (^CompelateBlcok)(CommentTextField *commentTextField);
 
 @interface CommentTextField : UIView<UITextFieldDelegate>
 @property (retain, nonatomic) IBOutlet UIView *textFieldView;
@@ -25,10 +25,7 @@ typedef void (^CompelateBlcok)(CommentTextField *view);
 @property (nonatomic,assign) BOOL shouldScrollResign;
 @property (nonatomic,weak) UIView *moveView;
 
-/**
- *  目标视图与键盘边缘的距离
- */
-@property (nonatomic,assign) CGFloat padding;
+
 /**
  * 为了避免某些视图被键盘遮挡，需要让某视图移动到键盘的上方，这个视图用flagView标记
  */
@@ -40,12 +37,12 @@ typedef void (^CompelateBlcok)(CommentTextField *view);
 @property (copy,nonatomic) CompelateBlcok compelateBlock;
 
 +(instancetype)showWithComplelateBlcok:(CompelateBlcok)compelateBlock;
-+(instancetype)showWithUsername:(NSString *)user complelateBlcok:(CompelateBlcok)compelateBlock;
-
++(instancetype)showWithUsername:(NSString *)username complelateBlcok:(CompelateBlcok)compelateBlock;
 
 +(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView complelateBlcok:(CompelateBlcok)compelateBlock;
-+(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView username:(NSString *)user complelateBlcok:(CompelateBlcok)compelateBlock;
++(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView username:(NSString *)username complelateBlcok:(CompelateBlcok)compelateBlock;
 
-
++(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView topPadding:(CGFloat)topPadding complelateBlcok:(CompelateBlcok)compelateBlock;
++(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView username:(NSString *)username topPadding:(CGFloat)topPadding complelateBlcok:(CompelateBlcok)compelateBlock;
 
 @end

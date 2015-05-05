@@ -17,6 +17,10 @@ static CGFloat const height_toolBar = 41.0f;
 @interface CommentTextField ()
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *contentTF;
+/**
+ *  目标视图与键盘边缘的距离
+ */
+@property (nonatomic,assign) CGFloat topPadding;
 //@property (assign, nonatomic) 
 @end
 
@@ -37,40 +41,41 @@ static CGFloat const height_toolBar = 41.0f;
 }
 +(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView complelateBlcok:(CompelateBlcok)compelateBlock{
     
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    CommentTextField *field = [[[NSBundle mainBundle] loadNibNamed:@"CommentTextField" owner:self options:nil] lastObject];
-    field.shouldScrollResign = resign;
-    field.moveView = moveView;
-    field.flagView = flagView;
-    field.frame = window.bounds;
-    field.sendButton.x = field.width - field.sendButton.width - padding;
-    field.contentTF.width = field.sendButton.x - padding*2;
-    field.contentTF.x = padding;
-    [window addSubview:field];
-    field.compelateBlock = compelateBlock;
-    [field.textField becomeFirstResponder];
-    
-    return field;
+    return [self showWithScrollResign:resign alloweMoveInView:moveView flagView:flagView topPadding:0 complelateBlcok:compelateBlock];
+}
++(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView topPadding:(CGFloat)topPadding complelateBlcok:(CompelateBlcok)compelateBlock{
+    return [self showWithScrollResign:resign alloweMoveInView:moveView flagView:flagView username:nil topPadding:topPadding complelateBlcok:compelateBlock];
 }
 +(instancetype)showWithUsername:(NSString *)user complelateBlcok:(CompelateBlcok)compelateBlock{
     
     return [self showWithScrollResign:NO alloweMoveInView:nil flagView:nil username:user complelateBlcok:compelateBlock];
 }
-+(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView username:(NSString *)user complelateBlcok:(CompelateBlcok)compelateBlock{
+
++(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView username:(NSString *)username topPadding:(CGFloat)topPadding complelateBlcok:(CompelateBlcok)compelateBlock{
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     CommentTextField *field = [[[NSBundle mainBundle] loadNibNamed:@"CommentTextField" owner:self options:nil] lastObject];
     field.frame = window.bounds;
     field.shouldScrollResign = resign;
     field.moveView = moveView;
     field.flagView = flagView;
-    field.sendButton.x = field.width - field.sendButton.width - padding;
-    field.contentTF.width = field.sendButton.x - padding*2;
+//    field.sendButton.x = field.width - field.sendButton.width - padding;
+    field.contentTF.width = field.width - padding*2;
     field.contentTF.x = padding;
+    field.topPadding = topPadding;
     [window addSubview:field];
     field.compelateBlock = compelateBlock;
     [field.textField becomeFirstResponder];
-    field.textField.placeholder = [NSString stringWithFormat:@"回复%@", user];
+    if(username){
+        field.textField.placeholder = [NSString stringWithFormat:@"回复%@", username];
+    }else{
+        field.textField.placeholder = @"评论";
+    }
+    
     return field;
+
+}
++(instancetype)showWithScrollResign:(BOOL)resign alloweMoveInView:(UIView *)moveView flagView:(UIView *)flagView username:(NSString *)username complelateBlcok:(CompelateBlcok)compelateBlock{
+    return [self showWithScrollResign:resign alloweMoveInView:moveView flagView:flagView username:username topPadding:0 complelateBlcok:compelateBlock];
 }
 -(void)awakeFromNib{
     
@@ -98,7 +103,7 @@ static CGFloat const height_toolBar = 41.0f;
         //计算flag在self.superView中的位置看是否被键盘遮挡
         CGRect flagRect = [self.flagView.superview convertRect:self.flagView.frame toView:nil];
         if(CGRectGetMaxY(flagRect) > self.y){//说明被遮挡了
-            self.moveView.transform = CGAffineTransformMakeTranslation(0, -(CGRectGetMaxY(flagRect) - self.y));
+            self.moveView.transform = CGAffineTransformMakeTranslation(0, -(CGRectGetMaxY(flagRect) - self.y + self.topPadding));
         }
     }
     [UIView beginAnimations:nil context:nil];
@@ -127,6 +132,9 @@ static CGFloat const height_toolBar = 41.0f;
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    if(self.compelateBlock){
+        self.compelateBlock(self);
+    }
     return YES;
 }
 -(void)hide{

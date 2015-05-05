@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,16 +14,7 @@
                     <rect key="frame" x="0.0" y="268" width="320" height="300"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="bic_reply_write_bg" clearButtonMode="whileEditing" id="HTW-s6-hlp">
-                            <rect key="frame" x="6" y="6" width="246" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="dUH-qa-Jje" id="Xgl-JA-2RG"/>
-                            </connections>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ElV-f1-jBZ">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ElV-f1-jBZ">
                             <rect key="frame" x="258" y="6" width="56" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="bt_reply_write_a">
@@ -34,6 +25,15 @@
                                 <action selector="comment:" destination="dUH-qa-Jje" eventType="touchUpInside" id="7SI-EO-HYC"/>
                             </connections>
                         </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="bic_reply_write_bg.png" clearButtonMode="whileEditing" id="HTW-s6-hlp">
+                            <rect key="frame" x="6" y="6" width="308" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                            <connections>
+                                <outlet property="delegate" destination="dUH-qa-Jje" id="Xgl-JA-2RG"/>
+                            </connections>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.87869395380000004" green="0.87869395380000004" blue="0.87869395380000004" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
@@ -49,7 +49,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bic_reply_write_bg" width="246" height="30"/>
+        <image name="bic_reply_write_bg.png" width="246" height="30"/>
         <image name="bt_reply_write_a" width="56" height="30"/>
         <image name="bt_reply_write_b" width="56" height="30"/>
     </resources>
