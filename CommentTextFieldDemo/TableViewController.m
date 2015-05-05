@@ -12,7 +12,7 @@
 #import "CommentTextField.h"
 
 @interface TableViewController ()
-@property (nonatomic,weak) CommentTextField *commentTF;
+//@property (nonatomic,weak) CommentTextField *commentTF;
 @end
 
 @implementation TableViewController
@@ -51,7 +51,7 @@
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
 
     [cell setClickBlock:^(UIView *clicedView){
-        self.commentTF = [CommentTextField showWithScrollResign:YES alloweMoveInView:tableView flagView:clicedView topPadding:5 complelateBlcok:^(CommentTextField *view) {
+        self.commentTextField = [CommentTextField showWithScrollResign:YES alloweMoveInView:tableView flagView:clicedView topPadding:5 complelateBlcok:^(CommentTextField *view) {
             
         }];
     }];
@@ -61,8 +61,8 @@
 }
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
   
-    if(self.commentTF){
-        [self.commentTF hide];
+    if(self.commentTextField){
+        [self.commentTextField hide];
     }
 }
 -(void)viewDidAppear:(BOOL)animated{

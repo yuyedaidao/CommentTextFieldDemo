@@ -12,7 +12,15 @@
 
 static CGFloat const padding = 10;
 static CGFloat const height_toolBar = 41.0f;
-
+static const char CommentTextFieldKey;
+@implementation UIViewController (CommentTextField)
+-(void)setCommentTextField:(CommentTextField *)commentTextField{
+    objc_setAssociatedObject(self, &CommentTextFieldKey, commentTextField, OBJC_ASSOCIATION_ASSIGN);
+}
+-(CommentTextField *)commentTextField{
+    return objc_getAssociatedObject(self, &CommentTextFieldKey);
+}
+@end
 
 @interface CommentTextField ()
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;

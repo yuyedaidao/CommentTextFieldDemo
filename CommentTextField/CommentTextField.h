@@ -11,9 +11,9 @@
 
 
 @class CommentTextField;
-//@interface UIScrollView (CommentTextField)
-//@property(nonatomic,weak) CommentTextField *commentTextField;
-//@end
+@interface UIViewController (CommentTextField)
+@property(nonatomic,weak) CommentTextField *commentTextField;
+@end
 
 
 typedef void (^CompelateBlcok)(CommentTextField *commentTextField);
