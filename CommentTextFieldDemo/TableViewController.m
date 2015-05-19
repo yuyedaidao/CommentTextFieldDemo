@@ -50,8 +50,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
 
-    [cell setClickBlock:^(UIView *clicedView){
+        [cell setClickBlock:^(UIView *clicedView){
         self.commentTextField = [CommentTextField showWithScrollResign:YES alloweMoveInView:tableView flagView:clicedView topPadding:5 complelateBlcok:^(CommentTextField *view) {
+            self.commentTextField = nil;
             
         }];
     }];
@@ -63,6 +64,7 @@
   
     if(self.commentTextField){
         [self.commentTextField hide];
+        self.commentTextField = nil;
     }
 }
 -(void)viewDidAppear:(BOOL)animated{
